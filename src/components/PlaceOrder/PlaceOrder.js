@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { useParams } from 'react-router';
-import { Card, Col, Row, Container } from 'react-bootstrap';
+import { Card, Col, Row, Container, Spinner } from 'react-bootstrap';
 import useAuth from '../hooks/useAuth';
 
 const PlaceOrder = () => {
@@ -16,7 +16,9 @@ const PlaceOrder = () => {
         data.order = room._id;
         data.status = 'pending';
 
-        fetch('http://localhost:5000/placeOrder', {
+        // const url = `http://localhost:5000/placeOrder`;
+        const url = `https://cryptic-temple-38934.herokuapp.com/placeOrder`;
+        fetch(url, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -33,7 +35,8 @@ const PlaceOrder = () => {
     };
 
     useEffect(() => {
-        const url = `http://localhost:5000/room/${roomId}`;
+        // const url = `http://localhost:5000/room/${roomId}`;
+        const url = `https://cryptic-temple-38934.herokuapp.com/room/${roomId}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setRoom(data))
@@ -43,14 +46,17 @@ const PlaceOrder = () => {
         <Container>
             <Row className='mt-5'>
                 <Col lg={4}>
-                    <Card className='p-0'>
-                        <Card.Img variant="top" className='img-fluid' src={room.img} />
-                        <Card.Body>
-                            <Card.Title>{room.name}</Card.Title>
-                            <Card.Text><small className='text-muted'>{room.description}</small></Card.Text>
-                            <Card.Text><small className='text-muted'>Price: ${room.price}</small></Card.Text>
-                        </Card.Body>
-                    </Card>
+                    {room.name ?
+                        <Card className='p-0'>
+                            <Card.Img variant="top" className='img-fluid' src={room.img} />
+                            <Card.Body>
+                                <Card.Title>{room.name}</Card.Title>
+                                <Card.Text><small className='text-muted'>{room.description}</small></Card.Text>
+                                <Card.Text><small className='text-muted'>Price: ${room.price}</small></Card.Text>
+                            </Card.Body>
+                        </Card> : <div className='container text-center mt-5'>
+                            <Spinner animation="border" variant="dark" />
+                        </div>}
                 </Col>
                 <Col lg={8}>
                     <form className='border p-5 rounded' onSubmit={handleSubmit(onSubmit)}>

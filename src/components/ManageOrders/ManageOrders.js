@@ -1,14 +1,20 @@
 import React, { useEffect, useState } from 'react';
+import { Spinner } from 'react-bootstrap';
 import ManageOrder from '../ManageOrder/ManageOrder';
 
 const ManageOrders = () => {
     const [orders, setOrders] = useState([]);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        const url = `http://localhost:5000/orders`;
+        const url = `https://cryptic-temple-38934.herokuapp.com/orders`;
+        // const url = `http://localhost:5000/orders`;
         fetch(url)
             .then(res => res.json())
-            .then(data => setOrders(data))
+            .then(data => {
+                setOrders(data)
+                setLoading(false)
+            })
     }, [])
 
     const handleApproveOrder = (id) => {
@@ -16,7 +22,8 @@ const ManageOrders = () => {
         const updatedorder = orders.find(order => order._id === id);
         updatedorder.status = 'approved';
 
-        const url = `http://localhost:5000/approve/${id}`;
+        const url = `https://cryptic-temple-38934.herokuapp.com/approve/${id}`;
+        // const url = `http://localhost:5000/approve/${id}`;
         fetch(url, {
             method: 'PUT',
             headers: {
@@ -29,8 +36,6 @@ const ManageOrders = () => {
                 if (data.modifiedCount > 0) {
                     alert('Approved Successfully');
 
-                    // reset state & clear form after succesfull updation
-                    // setUser({});
                     const remaining = orders.filter(order => order._id !== id);
                     remaining.push(updatedorder);
                     setOrders(remaining);
@@ -40,7 +45,9 @@ const ManageOrders = () => {
 
     const handleCancelOrder = (id) => {
         console.log(id);
-        fetch(`http://localhost:5000/deleteOrder/${id}`, {
+        // const url = `http://localhost:5000/deleteOrder/${id}`
+        const url = `https://cryptic-temple-38934.herokuapp.com/deleteOrder/${id}`
+        fetch(url, {
             method: 'DELETE'
         })
             .then(res => res.json())
@@ -58,12 +65,17 @@ const ManageOrders = () => {
     return (
         <div className='container mt-5'>
             {
-                orders.map(order => <ManageOrder
-                    key={order._id}
-                    order={order}
-                    handleApproveOrder={handleApproveOrder}
-                    handleCancelOrder={handleCancelOrder}
-                ></ManageOrder>)
+                !loading ?
+                    orders.map(order => <ManageOrder
+                        key={order._id}
+                        order={order}
+                        handleApproveOrder={handleApproveOrder}
+                        handleCancelOrder={handleCancelOrder}
+                    ></ManageOrder>)
+                    :
+                    <div className='container text-center mt-5'>
+                        <Spinner animation="border" variant="dark" />
+                    </div>
             }
         </div>
     );

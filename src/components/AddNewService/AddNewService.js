@@ -5,7 +5,9 @@ const AddNewService = () => {
     const { register, handleSubmit, reset } = useForm();
 
     const onSubmit = data => {
-        fetch('http://localhost:5000/addNewRoom', {
+        // const url = `http://localhost:5000/addNewRoom`;
+        const url = `https://cryptic-temple-38934.herokuapp.com/addNewRoom`;
+        fetch(url, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

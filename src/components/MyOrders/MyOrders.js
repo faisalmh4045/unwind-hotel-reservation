@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Container, Row } from 'react-bootstrap';
+import { Container, Row, Spinner } from 'react-bootstrap';
 import useAuth from '../hooks/useAuth';
 import Order from '../Order/Order';
 
@@ -10,14 +10,16 @@ const MyOrders = () => {
     const { user } = useAuth();
 
     useEffect(() => {
-        const url = `http://localhost:5000/myOrders/${user.email}`;
+        // const url = `http://localhost:5000/myOrders/${user.email}`;
+        const url = `https://cryptic-temple-38934.herokuapp.com/myOrders/${user.email}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setMyOrders(data))
     }, [user.email])
 
     useEffect(() => {
-        const url = `http://localhost:5000/rooms`;
+        // const url = `http://localhost:5000/rooms`;
+        const url = `https://cryptic-temple-38934.herokuapp.com/rooms`;
         fetch(url)
             .then(res => res.json())
             .then(data => {
@@ -42,7 +44,9 @@ const MyOrders = () => {
 
     const handleCancelOrder = (id) => {
         console.log(id);
-        fetch(`http://localhost:5000/deleteOrder/${id}`, {
+        // const url = `http://localhost:5000/deleteOrder/${id}`;
+        const url = `https://cryptic-temple-38934.herokuapp.com/deleteOrder/${id}`;
+        fetch(url, {
             method: 'DELETE'
         })
             .then(res => res.json())
@@ -61,11 +65,16 @@ const MyOrders = () => {
         <Container className='mt-5'>
             <Row lg={3} className="g-4">
                 {
-                    found.map(room => <Order
-                        key={room._id}
-                        room={room}
-                        handleCancelOrder={handleCancelOrder}
-                    ></Order>)
+                    found.length > 0 ?
+                        found.map(room => <Order
+                            key={room._id}
+                            room={room}
+                            handleCancelOrder={handleCancelOrder}
+                        ></Order>)
+                        :
+                        <div className='container text-center mt-5'>
+                            <Spinner animation="border" variant="dark" />
+                        </div>
                 }
             </Row>
         </Container>
