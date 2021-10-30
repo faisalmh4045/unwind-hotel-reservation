@@ -1,0 +1,34 @@
+#header-img{
+  width: 100%;
+}
+
+.info-text{
+  color: #e9e9e9;
+}
+#btn-get-started{
+  background-color: #c5a880;
+  border: 1px solid #c5a880;
+  color: white;
+  font-size: 1vw;
+}
+.info{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.info h1{
+  font-size: 5vw;
+}
+.info p{
+  font-size: 1vw;
+}
+
+@media screen and (max-width: 700px) {
+  .info p{
+  font-size: 2vw;
+  }
+  #btn-get-started{
+  font-size: 2vw;
+  } 
+}

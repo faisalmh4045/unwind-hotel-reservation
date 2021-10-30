@@ -8,7 +8,7 @@ const NavBar = () => {
     return (
         <div className='border-bottom'>
             <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
-                <Container className='py-3'>
+                <Container className='py-1'>
                     <Navbar.Brand className='fs-3 fw-bold text-dark ms-2' style={{ fontFamily: 'Charmonman' }}>Suites</Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">

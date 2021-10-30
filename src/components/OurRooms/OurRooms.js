@@ -22,7 +22,7 @@ const OurRooms = () => {
     }
 
     return (
-        <div>
+        <div className='container'>
             <Row lg={3} className="g-4">
                 {
                     rooms.length > 0 ?

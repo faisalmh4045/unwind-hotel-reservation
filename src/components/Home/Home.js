@@ -1,12 +1,11 @@
 import React from 'react';
+import Banner from '../Banner/Banner';
 import OurRooms from '../OurRooms/OurRooms';
 
 const Home = () => {
     return (
-        <div className='container'>
-            <div className='my-5 p-5 rounded-3 text-center border border-secondary'>
-                <h1>Banner</h1>
-            </div>
+        <div>
+            <Banner></Banner>
             <OurRooms></OurRooms>
         </div>
     );
