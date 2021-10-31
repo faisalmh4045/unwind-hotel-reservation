@@ -12,7 +12,7 @@ const Room = (props) => {
                     <Card.Img variant="top" className='img-fluid rounded-3' src={img} />
                     <Card.Body>
                         <Card.Title>{name}</Card.Title>
-                        <Card.Text><small className='text-muted'>{description}</small></Card.Text>
+                        <Card.Text><small className='text-muted'>{description.slice(0, 120)}...</small></Card.Text>
                         <Card.Text><small className='text-muted'>Price: ${price}</small></Card.Text>
 
                         <Button onClick={() => handleBookNow(_id)} variant='outline-dark' className='w-100'>Book now</Button>

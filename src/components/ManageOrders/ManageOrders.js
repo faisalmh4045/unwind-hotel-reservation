@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Spinner } from 'react-bootstrap';
 import ManageOrder from '../ManageOrder/ManageOrder';
+import './ManageOrders.css';
 
 const ManageOrders = () => {
     const [orders, setOrders] = useState([]);
@@ -45,39 +46,58 @@ const ManageOrders = () => {
 
     const handleCancelOrder = (id) => {
         console.log(id);
-        // const url = `http://localhost:5000/deleteOrder/${id}`
-        const url = `https://cryptic-temple-38934.herokuapp.com/deleteOrder/${id}`
-        fetch(url, {
-            method: 'DELETE'
-        })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data);
-                if (data.deletedCount) {
-                    alert('successfullly canceled!')
-                    const remaining = orders.filter(order => order._id !== id);
-                    setOrders(remaining);
-                }
+        const proceed = window.confirm('Are you sure, you want to cancel the order?')
+        if (proceed) {
+            // const url = `http://localhost:5000/deleteOrder/${id}`
+            const url = `https://cryptic-temple-38934.herokuapp.com/deleteOrder/${id}`
+            fetch(url, {
+                method: 'DELETE'
             })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data);
+                    if (data.deletedCount) {
+                        alert('successfullly canceled!')
+                        const remaining = orders.filter(order => order._id !== id);
+                        setOrders(remaining);
+                    }
+                })
+        }
 
     }
 
     return (
-        <div className='container mt-5'>
-            {
-                !loading ?
-                    orders.map(order => <ManageOrder
-                        key={order._id}
-                        order={order}
-                        handleApproveOrder={handleApproveOrder}
-                        handleCancelOrder={handleCancelOrder}
-                    ></ManageOrder>)
-                    :
-                    <div className='container text-center mt-5'>
-                        <Spinner animation="border" variant="dark" />
+        <>
+            {!loading ?
+                <div className='container border p-2 rounded-3 mt-5'>
+                    <div id='table-container'>
+                        <table>
+                            <tr>
+                                <th>Email</th>
+                                <th>Name</th>
+                                <th>Phone</th>
+                                <th>Order Date</th>
+                                <th>Status</th>
+                                <th>Approve</th>
+                                <th>Delete</th>
+                            </tr>
+                            {
+                                orders.map(order => <ManageOrder
+                                    key={order._id}
+                                    order={order}
+                                    handleApproveOrder={handleApproveOrder}
+                                    handleCancelOrder={handleCancelOrder}
+                                ></ManageOrder>)
+                            }
+                        </table>
                     </div>
+                </div>
+                :
+                <div className='container text-center mt-5'>
+                    <Spinner animation="border" variant="dark" />
+                </div>
             }
-        </div>
+        </>
     );
 };
 

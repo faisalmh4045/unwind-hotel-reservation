@@ -62,27 +62,27 @@ const PlaceOrder = () => {
                     <form className='border p-5 rounded' onSubmit={handleSubmit(onSubmit)}>
                         <div className="mb-3">
                             <label htmlFor="forName" className="form-label">Name</label>
-                            <input defaultValue={user.displayName} {...register("name")} type="text" className="form-control" id="forName" />
+                            <input defaultValue={user.displayName} {...register("name")} type="text" className="form-control" id="forName" required />
                         </div>
                         <div className="mb-3">
                             <label htmlFor="forEmail" className="form-label">Email</label>
-                            <input defaultValue={user.email} {...register("email")} type="email" className="form-control" id="forEmail" />
+                            <input defaultValue={user.email} {...register("email")} type="email" className="form-control" id="forEmail" required />
                         </div>
                         <div className="mb-3">
                             <label htmlFor="forAddress" className="form-label">Address</label>
-                            <input defaultValue="" {...register("address")} type="text" className="form-control" id="forAddress" />
+                            <input defaultValue="" {...register("address")} type="text" className="form-control" id="forAddress" required />
                         </div>
                         <div className="mb-3">
                             <label htmlFor="forDate" className="form-label">Date</label>
-                            <input defaultValue="" {...register("date")} type="date" className="form-control" id="forDate" />
+                            <input defaultValue="" {...register("date")} type="date" className="form-control" id="forDate" required />
                         </div>
                         <div className="mb-3">
                             <label htmlFor="forPhone" className="form-label">Phone</label>
-                            <input defaultValue="" {...register("phone")} type="text" className="form-control" id="forPhone" />
+                            <input defaultValue="" {...register("phone")} type="text" className="form-control" id="forPhone" required />
                         </div>
                         <div className="mb-4">
                             <label htmlFor="forCity" className="form-label">City</label>
-                            <input defaultValue="" {...register("city")} type="text" className="form-control" id="forCity" />
+                            <input defaultValue="" {...register("city")} type="text" className="form-control" id="forCity" required />
                         </div>
                         <input className="btn btn-success" type="submit" value="Place Order" />
                     </form>

@@ -11,9 +11,9 @@ const Banner = () => {
                     <img className='img-fluid' src={img} alt="" />
                 </div>
                 <div className='info text-light'>
-                    <p>ENJOY YOUR WONDERFUL HOLIDAYS WITH A GREAT LUXURY EXPERIENCE!</p>
+                    <p>ENJOY YOUR WONDERFUL VACATION WITH A GREAT LUXURY EXPERIENCE!</p>
                     <h1>Most Relaxing Place</h1>
-                    <Button id='btn-get-started' variant='light' className='m-0 mt-lg-2 w-50 text-uppercase'>Take a tour</Button>
+                    <Button id='btn-get-started' variant='light' className='m-0 mt-lg-3 w-50 text-uppercase'>Take a tour</Button>
                 </div>
             </div>
         </div>
