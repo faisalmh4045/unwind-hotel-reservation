@@ -9,7 +9,7 @@ const NavBar = () => {
         <div className='border-bottom'>
             <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
                 <Container className='py-1'>
-                    <Navbar.Brand className='fs-3 fw-bold text-dark ms-2' style={{ fontFamily: 'Charmonman' }}>Unwind</Navbar.Brand>
+                    <Navbar.Brand className='fs-3 fw-bold text-dark ms-2' style={{ fontFamily: 'Charmonman' }}><i>Unwind</i></Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <nav className="ms-lg-5 me-auto">

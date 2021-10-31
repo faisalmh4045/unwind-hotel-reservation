@@ -23,9 +23,10 @@ const Login = () => {
 
     return (
         <div className='d-flex justify-content-center mt-5'>
-            <div className="card p-3">
-                <div className="card-body">
-                    <button className='btn btn-success btn-sm w-100' onClick={handleGoogleLogin}> Continue with Google</button>
+            <div className="card p-3 m-lg-5">
+                <div className="card-body m-lg-5 text-center">
+                    <button className='btn btn-success mb-3' onClick={handleGoogleLogin}>
+                        Continue with Google</button>
                 </div>
 
             </div>

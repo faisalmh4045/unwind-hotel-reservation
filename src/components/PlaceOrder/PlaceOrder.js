@@ -51,8 +51,8 @@ const PlaceOrder = () => {
                             <Card.Img variant="top" className='img-fluid' src={room.img} />
                             <Card.Body>
                                 <Card.Title>{room.name}</Card.Title>
+                                <Card.Text><p className='mt-3'>Price: ${room.price}</p></Card.Text>
                                 <Card.Text><small className='text-muted'>{room.description}</small></Card.Text>
-                                <Card.Text><small className='text-muted'>Price: ${room.price}</small></Card.Text>
                             </Card.Body>
                         </Card> : <div className='container text-center mt-5'>
                             <Spinner animation="border" variant="dark" />

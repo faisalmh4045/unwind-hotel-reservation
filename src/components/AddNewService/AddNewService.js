@@ -27,7 +27,7 @@ const AddNewService = () => {
         <div className='d-flex justify-content-center mt-5'>
             <form className='border p-5 rounded' onSubmit={handleSubmit(onSubmit)}>
                 <div className="mb-3">
-                    <label htmlFor="forName" className="form-label">Name</label>
+                    <label htmlFor="forName" className="form-label">Room name</label>
                     <input defaultValue="" {...register("name")} type="text" className="form-control" id="forName" />
                 </div>
                 <div className="mb-3">
@@ -38,11 +38,11 @@ const AddNewService = () => {
                     <label htmlFor="forPrice" className="form-label">Price</label>
                     <input defaultValue="" {...register("price")} type="text" className="form-control" id="forPrice" />
                 </div>
-                <div className="mb-3">
-                    <label htmlFor="forImg" className="form-label">Image</label>
+                <div className="mb-4">
+                    <label htmlFor="forImg" className="form-label">Image url</label>
                     <input defaultValue="" {...register("img")} type="text" className="form-control" id="forImg" />
                 </div>
-                <input className="btn btn-success" type="submit" value="Add New Room" />
+                <input className="btn btn-dark w-100" type="submit" value="Add New Room" />
             </form>
         </div>
     );
