@@ -1,7 +1,7 @@
 # Unwind - is a website for booking hotel rooms for your grand vacation.
 
 Firebase live site [link](https://tourism-ass-11.web.app/).  
-Heroku live server  [link](https://tourism-ass-11.web.app/).
+Heroku live server  [link](https://cryptic-temple-38934.herokuapp.com/).
 
 * In this project, I'm developing an online hotel room booking facility for vacations.
 * Here, visitors can sign in via google and book any room they want by providing necessary information.
