@@ -9,7 +9,7 @@ const Room = (props) => {
             <Col>
                 {/* <Card className='p-0 shadow-sm'> */}
                 <Card className='p-0 border-0 shadow'>
-                    <Card.Img variant="top" className='img-fluid rounded-3' src={img} />
+                    <Card.Img variant="top" className='img-fluid' src={img} />
                     <Card.Body>
                         <Card.Title>{name}</Card.Title>
                         <Card.Text><small className='text-muted'>{description.slice(0, 120)}...</small></Card.Text>

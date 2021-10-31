@@ -47,7 +47,7 @@ const PlaceOrder = () => {
             <Row className='mt-5'>
                 <Col lg={4}>
                     {room.name ?
-                        <Card className='p-0'>
+                        <Card className='p-0 mb-3'>
                             <Card.Img variant="top" className='img-fluid' src={room.img} />
                             <Card.Body>
                                 <Card.Title>{room.name}</Card.Title>

@@ -70,7 +70,7 @@ const MyOrders = () => {
     }
 
     return (
-        <Container className='mt-5'>
+        <Container style={{ marginBottom: '300px' }} className='mt-5'>
             <Row lg={3} className="g-4">
                 {
                     !loading ?

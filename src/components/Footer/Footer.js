@@ -22,12 +22,12 @@ const Footer = () => {
                     </Col>
                     <Col className='mb-3'>
                         <div className='mb-4'>
-                            <p><i style={{ color: 'rgb(197,168,128)' }} class="fas fa-map-marker-alt pe-2"></i><i>Address</i></p>
+                            <p><i style={{ color: 'rgb(197,168,128)' }} className="fas fa-map-marker-alt pe-2"></i><i>Address</i></p>
                             <small >98 South-Middle Halishahar</small><br />
                             <small >Bandar, Chattogram.</small>
                         </div>
                         <div>
-                            <p><i style={{ color: 'rgb(197,168,128)' }} class="fas fa-envelope pe-2"></i><i>Email</i></p>
+                            <p><i style={{ color: 'rgb(197,168,128)' }} className="fas fa-envelope pe-2"></i><i>Email</i></p>
                             <small >Foysalnk9095@gmail.com</small>
                         </div>
                     </Col>

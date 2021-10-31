@@ -69,7 +69,7 @@ const ManageOrders = () => {
     return (
         <>
             {!loading ?
-                <div className='container border p-2 rounded-3 mt-5'>
+                <div style={{ marginBottom: '300px' }} className='container border p-2 rounded-3 mt-5'>
                     <div id='table-container'>
                         <table>
                             <tr>
@@ -93,7 +93,7 @@ const ManageOrders = () => {
                     </div>
                 </div>
                 :
-                <div className='container text-center mt-5'>
+                <div style={{ marginBottom: '300px' }} className='container text-center mt-5'>
                     <Spinner animation="border" variant="dark" />
                 </div>
             }
