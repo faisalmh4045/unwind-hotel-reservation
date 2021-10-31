@@ -6,7 +6,7 @@ const Testimonial = () => {
         <div>
             <div className='container my-5 pb-5'>
                 <div className='text-center mb-5 pt-5 pb-1'>
-                    <h6>TESTIMONIAL</h6>
+                    <h6 style={{ color: 'rgb(197,168,128)' }}>TESTIMONIAL</h6>
                     <h1>Happy Guests</h1>
                 </div>
                 <Row xs={1} lg={4} className="g-4">

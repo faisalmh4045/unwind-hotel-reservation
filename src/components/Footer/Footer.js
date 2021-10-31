@@ -22,12 +22,12 @@ const Footer = () => {
                     </Col>
                     <Col className='mb-3'>
                         <div className='mb-4'>
-                            <p><i class="fas fa-map-marker-alt pe-2"></i><i>Address</i></p>
+                            <p><i style={{ color: 'rgb(197,168,128)' }} class="fas fa-map-marker-alt pe-2"></i><i>Address</i></p>
                             <small >98 South-Middle Halishahar</small><br />
                             <small >Bandar, Chattogram.</small>
                         </div>
                         <div>
-                            <p><i class="fas fa-envelope pe-2"></i><i>Email</i></p>
+                            <p><i style={{ color: 'rgb(197,168,128)' }} class="fas fa-envelope pe-2"></i><i>Email</i></p>
                             <small >Foysalnk9095@gmail.com</small>
                         </div>
                     </Col>
@@ -35,7 +35,7 @@ const Footer = () => {
                         <p>Sign up for our newsletter</p>
                         <div className='newsletter mb-3 d-flex flex-nowrap'>
                             <input className='border-0 ps-3 ps-lg-1 ps-xl-3 pe-0 py-3' type="email" placeholder='Email' />
-                            <button className='border-0 bg-secondary px-3 py-3'><i className="fas fa-location-arrow text-light"></i></button>
+                            <button style={{ backgroundColor: 'rgb(197,168,128)' }} className='border-0 px-3 py-3'><i className="fas fa-location-arrow text-light"></i></button>
                         </div>
                     </Col>
                 </Row>
