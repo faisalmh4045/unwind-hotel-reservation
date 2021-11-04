@@ -27,7 +27,7 @@ const OurRooms = () => {
                 <h6 style={{ color: 'rgb(197,168,128)' }}>OUR ROOMS</h6>
                 <h1>Featured Rooms</h1>
             </div>
-            <Row lg={3} className="g-4">
+            <Row xm={1} md={2} lg={4} className="g-4">
                 {
                     rooms.length > 0 ?
                         rooms.map(room => <Room

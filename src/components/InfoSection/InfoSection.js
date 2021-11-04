@@ -4,7 +4,7 @@ import { Col, Row } from 'react-bootstrap';
 const InfoSection = () => {
     return (
         <div style={{ backgroundColor: '#222222' }} className='container-fluid py-5'>
-            <Row xs={1} lg={4} className="g-4 text-center">
+            <Row xs={1} md={2} lg={4} className="g-4 text-center">
                 <Col>
                     <div>
                         <h2 style={{ color: '#c5a880' }}><b>38,900</b></h2>

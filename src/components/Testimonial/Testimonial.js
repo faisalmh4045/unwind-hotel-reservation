@@ -9,7 +9,7 @@ const Testimonial = () => {
                     <h6 style={{ color: 'rgb(197,168,128)' }}>TESTIMONIAL</h6>
                     <h1>Happy Guests</h1>
                 </div>
-                <Row xs={1} lg={4} className="g-4">
+                <Row xs={1} md={2} lg={4} className="g-4">
                     <Col>
                         <Card className='p-lg-3 border-0 shadow'>
                             <Card.Body>
